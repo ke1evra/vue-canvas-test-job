@@ -32,6 +32,8 @@ export default class PolygonatorView extends Vue {
       )
     );
     this.renderCanvas();
+    this.xPoint = 0;
+    this.yPoint = 0;
   }
 
   renderCanvas(): void {
