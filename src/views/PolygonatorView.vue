@@ -25,7 +25,6 @@ export default class PolygonatorView extends Vue {
   ];
 
   addPoint(): void {
-    if (!this.xPoint || !this.yPoint) return;
     this.pointList.push(
       new Point(
         Number.parseInt(this.xPoint.toString()),
