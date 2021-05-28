@@ -88,6 +88,7 @@ export default class PolygonatorView extends Vue {
 <style lang="scss" scoped>
 .root {
   display: flex;
+  padding-top: 50px;
 
   .control {
     padding: 0 20px;
