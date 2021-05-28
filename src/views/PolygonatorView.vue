@@ -1,5 +1,6 @@
 <template>
-  <div class="root" id="canvas">
+  <div class="root">
+    <div class="control"></div>
     <div>
       <canvas ref="canvas" height="300" width="300"></canvas>
     </div>
@@ -17,12 +18,7 @@ import { Point, Polygonator } from "@/model/Polygonator";
 export default class PolygonatorView extends Vue {
   private xPoint = 0;
   private yPoint = 0;
-  private pointList: Point[] = [
-    new Point(100, 100),
-    new Point(200, 200),
-    new Point(200, 100),
-    new Point(100, 200),
-  ];
+  private pointList: Point[] = [];
 
   addPoint(): void {
     this.pointList.push(
@@ -56,6 +52,8 @@ export default class PolygonatorView extends Vue {
       ctx.moveTo(start.x, start.y);
       ctx.lineTo(finish.x, finish.y);
       ctx.stroke();
+
+      ctx.fillText(`${i} (${start.x};${start.y})`, start.x, start.y);
     }
   }
 
@@ -86,6 +84,10 @@ export default class PolygonatorView extends Vue {
     &:hover {
       opacity: 0.7;
     }
+  }
+
+  canvas {
+    overflow: visible;
   }
 }
 </style>
