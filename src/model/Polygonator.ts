@@ -6,11 +6,11 @@ export class Point {
     this.y = y;
   }
 
-  setX(value: number) {
+  setX(value: number): void {
     this.x = value;
   }
 
-  setY(value: number) {
+  setY(value: number): void {
     this.y = value;
   }
 }
@@ -21,7 +21,7 @@ export class Polygonator {
     this.points = points;
   }
 
-  static radsToDegrees(rad: number) {
+  static radsToDegrees(rad: number): number {
     return (rad * 180.0) / Math.PI;
   }
 
